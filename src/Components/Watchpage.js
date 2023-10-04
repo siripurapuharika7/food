@@ -13,9 +13,11 @@ const Watchpage = () => {
   const [searchquery, setsearchquery] = useState("");
 
   const { strCategory } = useParams();
+
   useEffect(() => {
     fetchdata();
   }, []);
+  
   const fetchdata = async () => {
     const data = await fetch(
       "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + strCategory
@@ -50,9 +52,9 @@ const Watchpage = () => {
         </button>
       </div>
       <div className="flex flex-wrap">
-        {minfilterresmenu.map((info) => (
-          <Itemcard key={info.idMeal} items={info} />
-        ))}
+        {
+          <Itemcard  items={minfilterresmenu} />
+        }
       </div>
     </div>
   );

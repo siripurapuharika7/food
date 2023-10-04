@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 
 const Navbar=()=>{
-    const Cartitems = useSelector((store) => store.cart.itemlist);
+    const Cartitems = useSelector((store) => store.cart.items);
     const ismenuopen=useSelector((store)=>store.app.ismenuopen);
 
    if (!ismenuopen) return null;

@@ -9,7 +9,8 @@ const Header = () => {
     dispatch(togglemenu());
   };
 
-  const Cartitems = useSelector((store) => store.cart.itemlist);
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   return (
     <div className="flex justify-between  w-full  bg-zinc-800 h-20 items-center text-orange-400 shadow-lg">
@@ -27,7 +28,7 @@ const Header = () => {
           <a href="/area">Regional</a>
             </li>
             <li>
-          <a href="/cart">Cart({Cartitems.length})</a>
+          <a href="/cart">Cart({cartItems.length})</a>
             </li>
          
         </ul>
